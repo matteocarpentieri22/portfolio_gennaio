@@ -37,13 +37,13 @@ export default function Hero() {
     }, [displayedText, isDeleting, roleIndex]);
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <div className="section-container text-center z-10">
+        <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
+            <div className="section-container text-center z-10 max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="mb-8"
+                    className="mb-4"
                 >
                     {/* Profile Image with Neon Border */}
                     <div className="relative inline-block">
@@ -52,7 +52,7 @@ export default function Hero() {
                         <img
                             src={profileImage}
                             alt="Matteo Carpentieri"
-                            className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-cyber-dark"
+                            className="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover border-4 border-cyber-dark"
                         />
                     </div>
                 </motion.div>
@@ -61,7 +61,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+                    className="text-3xl md:text-5xl font-bold mb-3 tracking-tight"
                 >
                     {personalInfo.name}
                 </motion.h1>
@@ -70,11 +70,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="mb-8"
+                    className="mb-4"
                 >
-                    <div className="text-2xl md:text-4xl font-semibold gradient-text min-h-[3rem] flex items-center justify-center">
+                    <div className="text-xl md:text-3xl font-semibold gradient-text min-h-[2.5rem] flex items-center justify-center">
                         <span className="font-mono">&gt; {displayedText}</span>
-                        <span className="inline-block w-1 h-8 md:h-10 bg-electric-blue ml-1 animate-pulse" />
+                        <span className="inline-block w-1 h-6 md:h-8 bg-electric-blue ml-1 animate-pulse" />
                     </div>
                 </motion.div>
 
@@ -82,7 +82,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed"
+                    className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed px-4"
                 >
                     I am a young <span className="gradient-text font-bold">Computer Engineer</span> specializing in{' '}
                     <span className="gradient-text font-bold">Artificial Intelligence and Robotics</span>.
@@ -95,16 +95,16 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="flex justify-center gap-6"
+                    className="flex justify-center gap-6 mb-8"
                 >
                     <a
                         href={personalInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-electric-blue to-neon-violet hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] transition-all duration-300 transform hover:scale-105"
+                        className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-electric-blue to-neon-violet hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] transition-all duration-300 transform hover:scale-105"
                     >
-                        <Linkedin className="w-6 h-6" />
-                        <span className="font-semibold text-lg">Connect on LinkedIn</span>
+                        <Linkedin className="w-5 h-5" />
+                        <span className="font-semibold text-base">Connect on LinkedIn</span>
                     </a>
                 </motion.div>
 
@@ -113,7 +113,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                    className="mt-4 flex justify-center"
                 >
                     <motion.div
                         animate={{ y: [0, 10, 0] }}
@@ -133,6 +133,6 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 }
