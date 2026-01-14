@@ -17,7 +17,7 @@ export default function Experience() {
 
                 <div className="max-w-4xl mx-auto relative">
                     {/* Timeline line */}
-                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-electric-blue via-neon-violet to-electric-blue" />
+                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-electric-blue via-neon-violet to-electric-blue z-0" />
 
                     {experience.map((exp, index) => (
                         <motion.div
