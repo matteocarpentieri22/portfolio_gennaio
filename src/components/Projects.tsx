@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data/portfolio-data';
 
 // Import project images
@@ -73,13 +72,13 @@ export default function Projects() {
                                     {project.title}
                                 </h3>
 
-                                <p className="text-slate-400 text-sm mb-4 line-clamp-3">
+                                <p className="text-slate-400 text-sm mb-4">
                                     {project.description}
                                 </p>
 
                                 {/* Technologies */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                                <div className="flex flex-wrap gap-2">
+                                    {project.technologies.map((tech, techIndex) => (
                                         <span
                                             key={techIndex}
                                             className="px-2 py-1 text-xs font-mono rounded bg-cyber-dark border border-electric-blue/30 text-electric-blue"
@@ -87,26 +86,6 @@ export default function Projects() {
                                             {tech}
                                         </span>
                                     ))}
-                                    {project.technologies.length > 3 && (
-                                        <span className="px-2 py-1 text-xs font-mono rounded bg-cyber-dark border border-neon-violet/30 text-neon-violet">
-                                            +{project.technologies.length - 3}
-                                        </span>
-                                    )}
-                                </div>
-
-                                {/* Links */}
-                                <div className="flex gap-3">
-                                    <a
-                                        href={project.github}
-                                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-gray/50 hover:bg-electric-blue/20 border border-electric-blue/30 hover:border-electric-blue transition-all duration-300 text-sm group/link"
-                                    >
-                                        <Github className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
-                                        <span>GitHub</span>
-                                    </a>
-                                    <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-gray/50 hover:bg-neon-violet/20 border border-neon-violet/30 hover:border-neon-violet transition-all duration-300 text-sm group/link">
-                                        <ExternalLink className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
-                                        <span>Details</span>
-                                    </button>
                                 </div>
                             </div>
                         </motion.div>
