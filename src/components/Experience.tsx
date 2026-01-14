@@ -24,10 +24,15 @@ export default function Experience() {
                             key={exp.id}
                             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.15,
+                                ease: [0.25, 0.1, 0.25, 1]
+                            }}
                             className={`relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:ml-auto'
                                 }`}
+                            style={{ willChange: 'transform, opacity' }}
                         >
                             {/* Timeline dot */}
                             <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full bg-electric-blue transform -translate-x-1/2 neon-glow z-10" />

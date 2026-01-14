@@ -20,6 +20,9 @@
   /* Glassmorphism card */
   .glass-card {
     @apply bg-cyber-gray/60 backdrop-blur-xl border border-white/10 rounded-2xl;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   /* Neon glow effect */
@@ -27,17 +30,22 @@
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.3),
       0 0 20px rgba(0, 212, 255, 0.2),
       0 0 30px rgba(0, 212, 255, 0.1);
+    transform: translateZ(0);
+    will-change: box-shadow, transform;
   }
 
   .neon-glow-violet {
     box-shadow: 0 0 10px rgba(168, 85, 247, 0.3),
       0 0 20px rgba(168, 85, 247, 0.2),
       0 0 30px rgba(168, 85, 247, 0.1);
+    transform: translateZ(0);
+    will-change: box-shadow, transform;
   }
 
   /* Gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-electric-blue to-neon-violet bg-clip-text text-transparent;
+    transform: translateZ(0);
   }
 
   /* Hover glow button */
@@ -45,6 +53,8 @@
     @apply relative overflow-hidden px-8 py-3 rounded-lg font-semibold transition-all duration-300;
     @apply bg-gradient-to-r from-electric-blue to-neon-violet;
     @apply hover:shadow-[0_0_30px_rgba(0, 212, 255, 0.5)];
+    transform: translateZ(0);
+    will-change: box-shadow, transform;
   }
 
   /* Section container */

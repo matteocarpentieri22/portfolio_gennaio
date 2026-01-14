@@ -15,7 +15,7 @@ export default function AnimatedBackground() {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { alpha: false });
         if (!ctx) return;
 
         // Set canvas size
@@ -26,9 +26,9 @@ export default function AnimatedBackground() {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Create particles
+        // Create particles - REDUCED from 80 to 50 for better performance
         const particles: Particle[] = [];
-        const particleCount = 80;
+        const particleCount = 50;
 
         for (let i = 0; i < particleCount; i++) {
             particles.push({
@@ -39,6 +39,8 @@ export default function AnimatedBackground() {
                 radius: Math.random() * 2 + 1,
             });
         }
+
+        let animationFrameId: number;
 
         // Animation loop
         const animate = () => {
@@ -61,33 +63,33 @@ export default function AnimatedBackground() {
                 ctx.fillStyle = 'rgba(0, 212, 255, 0.6)';
                 ctx.fill();
 
-                // Draw connections
-                particles.forEach((otherParticle, j) => {
-                    if (i === j) return;
-
+                // Draw connections - OPTIMIZED: reduced distance from 150 to 120
+                for (let j = i + 1; j < particles.length; j++) {
+                    const otherParticle = particles[j];
                     const dx = particle.x - otherParticle.x;
                     const dy = particle.y - otherParticle.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
+                    if (distance < 120) {
                         ctx.beginPath();
                         ctx.moveTo(particle.x, particle.y);
                         ctx.lineTo(otherParticle.x, otherParticle.y);
-                        const opacity = (1 - distance / 150) * 0.3;
+                        const opacity = (1 - distance / 120) * 0.3;
                         ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
-                });
+                }
             });
 
-            requestAnimationFrame(animate);
+            animationFrameId = requestAnimationFrame(animate);
         };
 
         animate();
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 

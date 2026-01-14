@@ -42,8 +42,15 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    transition={{
+                        duration: 0.8,
+                        ease: 'easeOut',
+                        type: 'spring',
+                        stiffness: 100,
+                        damping: 15
+                    }}
                     className="mb-4"
+                    style={{ willChange: 'transform, opacity' }}
                 >
                     {/* Profile Image with Neon Border */}
                     <div className="relative inline-block">
@@ -60,8 +67,13 @@ export default function Hero() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.2,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
                     className="text-3xl md:text-5xl font-bold mb-3 tracking-tight"
+                    style={{ willChange: 'transform, opacity' }}
                 >
                     {personalInfo.name}
                 </motion.h1>
@@ -69,8 +81,13 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.4,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
                     className="mb-4"
+                    style={{ willChange: 'transform, opacity' }}
                 >
                     <div className="text-xl md:text-3xl font-semibold gradient-text min-h-[2.5rem] flex items-center justify-center">
                         <span className="font-mono">&gt; {displayedText}</span>
@@ -81,8 +98,13 @@ export default function Hero() {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.6,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
                     className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed px-4"
+                    style={{ willChange: 'transform, opacity' }}
                 >
                     I am a young <span className="gradient-text font-bold">Computer Engineer</span> specializing in{' '}
                     <span className="gradient-text font-bold">Artificial Intelligence and Robotics</span>.
@@ -94,8 +116,13 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.8,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
                     className="flex justify-center gap-6 mb-8"
+                    style={{ willChange: 'transform, opacity' }}
                 >
                     <a
                         href={personalInfo.linkedin}
@@ -117,8 +144,13 @@ export default function Hero() {
                 >
                     <motion.div
                         animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
+                        transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: 'easeInOut'
+                        }}
                         className="cursor-pointer"
+                        style={{ willChange: 'transform' }}
                         onClick={() => {
                             const element = document.getElementById('skills');
                             if (element) {
