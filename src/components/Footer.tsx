@@ -1,17 +1,21 @@
 import { motion } from 'framer-motion';
 import { Mail, Linkedin } from 'lucide-react';
 import { personalInfo } from '../data/portfolio-data';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslations } from '../data/translations';
 
 export default function Footer() {
+    const { language } = useLanguage();
+    const t = useTranslations(language);
     const currentYear = new Date().getFullYear();
 
     const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Experience', href: '#experience' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Education', href: '#education' },
-        { name: 'Contact', href: '#contact' },
+        { name: t.nav.home, href: '#home' },
+        { name: t.nav.skills, href: '#skills' },
+        { name: t.nav.experience, href: '#experience' },
+        { name: t.nav.projects, href: '#projects' },
+        { name: t.nav.education, href: '#education' },
+        { name: t.nav.contact, href: '#contact' },
     ];
 
     const scrollToSection = (href: string) => {
@@ -54,7 +58,7 @@ export default function Footer() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                        <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-white">{t.footer.quickLinks}</h4>
                         <ul className="space-y-2">
                             {navLinks.map((link) => (
                                 <li key={link.name}>
@@ -76,7 +80,7 @@ export default function Footer() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <h4 className="text-lg font-semibold mb-4 text-white">Get In Touch</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-white">{t.footer.getInTouch}</h4>
                         <div className="space-y-3">
                             <a
                                 href={`mailto:${personalInfo.email}`}
@@ -96,7 +100,7 @@ export default function Footer() {
                                 <div className="p-2 rounded-lg bg-neon-violet/10 group-hover:bg-neon-violet/20 transition-colors">
                                     <Linkedin className="w-4 h-4" />
                                 </div>
-                                <span className="text-sm">LinkedIn Profile</span>
+                                <span className="text-sm">{t.footer.linkedinProfile}</span>
                             </a>
                         </div>
                     </motion.div>
@@ -112,7 +116,7 @@ export default function Footer() {
                 >
                     <div className="text-center">
                         <p className="text-slate-400 text-sm">
-                            © {currentYear} {personalInfo.name}. All rights reserved.
+                            © {currentYear} {personalInfo.name}. {t.footer.rights}.
                         </p>
                     </div>
                 </motion.div>

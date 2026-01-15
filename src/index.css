@@ -19,7 +19,7 @@
 
   /* Glassmorphism card */
   .glass-card {
-    @apply bg-cyber-gray/60 backdrop-blur-xl border border-white/10 rounded-2xl;
+    @apply bg-cyber-gray/95 backdrop-blur-xl border border-white/10 rounded-2xl;
     transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;

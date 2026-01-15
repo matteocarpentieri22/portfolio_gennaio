@@ -37,7 +37,7 @@ export default function Experience() {
                             {/* Timeline dot */}
                             <div className="absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full bg-electric-blue transform -translate-x-1/2 neon-glow z-10" />
 
-                            <div className="ml-16 md:ml-0 glass-card p-6 hover:neon-glow transition-all duration-300 group relative z-20">
+                            <div className="ml-16 md:ml-0 glass-card p-6 hover:neon-glow transition-all duration-300 group relative z-20 isolate">
                                 <div className="flex items-start gap-3 mb-3">
                                     <div className="p-2 rounded-lg bg-gradient-to-r from-electric-blue to-neon-violet group-hover:scale-110 transition-transform duration-300">
                                         <Briefcase className="w-5 h-5" />
