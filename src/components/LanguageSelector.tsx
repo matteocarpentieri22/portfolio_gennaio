@@ -1,25 +1,60 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import flagIt from '../assets/flag-it.png';
-import flagEn from '../assets/flag-en.png';
-import flagFr from '../assets/flag-fr.png';
-import flagEs from '../assets/flag-es.png';
 
 export type Language = 'it' | 'en' | 'fr' | 'es';
 
 interface LanguageOption {
     code: Language;
     name: string;
-    flag: string;
+    colors: string[];
 }
 
 const languages: LanguageOption[] = [
-    { code: 'it', name: 'Italiano', flag: flagIt },
-    { code: 'en', name: 'English', flag: flagEn },
-    { code: 'fr', name: 'Français', flag: flagFr },
-    { code: 'es', name: 'Español', flag: flagEs },
+    { code: 'it', name: 'Italiano', colors: ['#009246', '#FFFFFF', '#CE2B37'] },
+    { code: 'en', name: 'English', colors: ['#012169', '#FFFFFF', '#C8102E'] },
+    { code: 'fr', name: 'Français', colors: ['#0055A4', '#FFFFFF', '#EF4135'] },
+    { code: 'es', name: 'Español', colors: ['#C60B1E', '#FFC400', '#C60B1E'] },
 ];
+
+// Simple flag component using CSS
+const Flag = ({ colors, type }: { colors: string[]; type: Language }) => {
+    if (type === 'en') {
+        // Union Jack simplified
+        return (
+            <div className="w-6 h-4 rounded-sm overflow-hidden flex items-center justify-center bg-[#012169] relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-full h-[40%] bg-white" />
+                    <div className="absolute w-full h-[20%] bg-[#C8102E]" />
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="w-[20%] h-full bg-white" />
+                    <div className="absolute w-[10%] h-full bg-[#C8102E]" />
+                </div>
+            </div>
+        );
+    }
+
+    // Vertical stripes for IT, FR
+    if (type === 'it' || type === 'fr') {
+        return (
+            <div className="w-6 h-4 rounded-sm overflow-hidden flex">
+                {colors.map((color, i) => (
+                    <div key={i} className="flex-1" style={{ backgroundColor: color }} />
+                ))}
+            </div>
+        );
+    }
+
+    // Horizontal stripes for ES
+    return (
+        <div className="w-6 h-4 rounded-sm overflow-hidden flex flex-col">
+            <div className="flex-1" style={{ backgroundColor: colors[0] }} />
+            <div className="flex-[2]" style={{ backgroundColor: colors[1] }} />
+            <div className="flex-1" style={{ backgroundColor: colors[2] }} />
+        </div>
+    );
+};
 
 interface LanguageSelectorProps {
     currentLanguage: Language;
@@ -52,11 +87,7 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange }: 
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-electric-blue/10 border border-electric-blue/30 hover:bg-electric-blue/20 transition-all duration-300"
             >
-                <img
-                    src={currentLang.flag}
-                    alt={currentLang.name}
-                    className="w-6 h-6 rounded object-cover"
-                />
+                <Flag colors={currentLang.colors} type={currentLang.code} />
                 <span className="hidden sm:inline text-sm font-medium text-slate-200">
                     {currentLang.code.toUpperCase()}
                 </span>
@@ -91,11 +122,7 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange }: 
                                         : 'text-slate-300 hover:bg-electric-blue/10 hover:text-white'
                                     }`}
                             >
-                                <img
-                                    src={lang.flag}
-                                    alt={lang.name}
-                                    className="w-6 h-6 rounded object-cover"
-                                />
+                                <Flag colors={lang.colors} type={lang.code} />
                                 <span className="font-medium">{lang.name}</span>
                                 {currentLanguage === lang.code && (
                                     <motion.span
