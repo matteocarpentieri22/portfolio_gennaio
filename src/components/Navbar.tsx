@@ -161,19 +161,6 @@ export default function Navbar() {
                                     {item.name}
                                 </motion.button>
                             ))}
-
-                            {/* Language Selector for Mobile */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: navItems.length * 0.05 }}
-                                className="pt-4 border-t border-electric-blue/20"
-                            >
-                                <LanguageSelector
-                                    currentLanguage={language}
-                                    onLanguageChange={setLanguage}
-                                />
-                            </motion.div>
                         </div>
                     </motion.div>
                 )}

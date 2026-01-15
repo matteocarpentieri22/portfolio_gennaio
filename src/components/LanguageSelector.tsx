@@ -76,12 +76,12 @@ export default function LanguageSelector({ currentLanguage, onLanguageChange }: 
                         transition={{ duration: 0.2 }}
                         className="absolute right-0 mt-2 w-48 bg-cyber-dark/95 backdrop-blur-xl border border-electric-blue/30 rounded-lg shadow-2xl shadow-electric-blue/20 overflow-hidden z-50"
                     >
-                        {languages.map((lang, index) => (
+                        {languages.map((lang) => (
                             <motion.button
                                 key={lang.code}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.05 }}
+                                transition={{ duration: 0.2 }}
                                 onClick={() => {
                                     onLanguageChange(lang.code);
                                     setIsOpen(false);
