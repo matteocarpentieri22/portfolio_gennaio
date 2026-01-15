@@ -1,25 +1,20 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import LanguageSelector from './LanguageSelector';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTranslations } from '../data/translations';
+
+const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
-    const { language, setLanguage } = useLanguage();
-    const t = useTranslations(language);
-
-    const navItems = [
-        { name: t.nav.home, href: '#home' },
-        { name: t.nav.skills, href: '#skills' },
-        { name: t.nav.experience, href: '#experience' },
-        { name: t.nav.projects, href: '#projects' },
-        { name: t.nav.education, href: '#education' },
-        { name: t.nav.contact, href: '#contact' },
-    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -81,56 +76,39 @@ export default function Navbar() {
                         </motion.div>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center space-x-4">
-                            <div className="flex items-center space-x-1">
-                                {navItems.map((item) => (
-                                    <button
-                                        key={item.name}
-                                        onClick={() => scrollToSection(item.href)}
-                                        className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
-                                            ? 'text-electric-blue'
-                                            : 'text-slate-300 hover:text-white'
-                                            }`}
-                                    >
-                                        {activeSection === item.href.substring(1) && (
-                                            <motion.div
-                                                layoutId="activeSection"
-                                                className="absolute inset-0 bg-electric-blue/10 rounded-lg border border-electric-blue/30"
-                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
-                                        <span className="relative z-10">{item.name}</span>
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Language Selector */}
-                            <LanguageSelector
-                                currentLanguage={language}
-                                onLanguageChange={setLanguage}
-                            />
+                        <div className="hidden md:flex items-center space-x-1">
+                            {navItems.map((item) => (
+                                <button
+                                    key={item.name}
+                                    onClick={() => scrollToSection(item.href)}
+                                    className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
+                                        ? 'text-electric-blue'
+                                        : 'text-slate-300 hover:text-white'
+                                        }`}
+                                >
+                                    {activeSection === item.href.substring(1) && (
+                                        <motion.div
+                                            layoutId="activeSection"
+                                            className="absolute inset-0 bg-electric-blue/10 rounded-lg border border-electric-blue/30"
+                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{item.name}</span>
+                                </button>
+                            ))}
                         </div>
 
-                        {/* Mobile: Language Selector + Menu Button */}
-                        <div className="md:hidden flex items-center gap-3">
-                            {/* Language Selector for Mobile */}
-                            <LanguageSelector
-                                currentLanguage={language}
-                                onLanguageChange={setLanguage}
-                            />
-
-                            {/* Mobile Menu Button */}
-                            <button
-                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="p-2 rounded-lg hover:bg-electric-blue/10 transition-colors"
-                            >
-                                {isMobileMenuOpen ? (
-                                    <X className="w-6 h-6 text-electric-blue" />
-                                ) : (
-                                    <Menu className="w-6 h-6 text-electric-blue" />
-                                )}
-                            </button>
-                        </div>
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="md:hidden p-2 rounded-lg hover:bg-electric-blue/10 transition-colors"
+                        >
+                            {isMobileMenuOpen ? (
+                                <X className="w-6 h-6 text-electric-blue" />
+                            ) : (
+                                <Menu className="w-6 h-6 text-electric-blue" />
+                            )}
+                        </button>
                     </div>
                 </div>
             </motion.nav>

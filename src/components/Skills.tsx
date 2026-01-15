@@ -1,40 +1,35 @@
 import { motion } from 'framer-motion';
 import { Code, Brain, Bot, Database, Globe } from 'lucide-react';
 import { skills } from '../data/portfolio-data';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTranslations } from '../data/translations';
 
 export default function Skills() {
-    const { language } = useLanguage();
-    const t = useTranslations(language);
-
     const skillCategories = [
         {
-            title: t.skills.categories.programming,
+            title: "Programming Languages",
             icon: <Code className="w-6 h-6" />,
             skills: skills.programming,
             color: "from-electric-blue to-cyan-400",
         },
         {
-            title: t.skills.categories.ai,
+            title: "AI & Machine Learning",
             icon: <Brain className="w-6 h-6" />,
             skills: skills.ai,
             color: "from-neon-violet to-purple-400",
         },
         {
-            title: t.skills.categories.robotics,
+            title: "Robotics",
             icon: <Bot className="w-6 h-6" />,
             skills: skills.robotics,
             color: "from-electric-blue to-neon-violet",
         },
         {
-            title: t.skills.categories.database,
+            title: "Database & Big Data",
             icon: <Database className="w-6 h-6" />,
             skills: skills.database,
             color: "from-cyan-400 to-electric-blue",
         },
         {
-            title: t.skills.categories.web,
+            title: "Web Development",
             icon: <Globe className="w-6 h-6" />,
             skills: skills.web,
             color: "from-purple-400 to-neon-violet",
@@ -50,7 +45,7 @@ export default function Skills() {
                 transition={{ duration: 0.8 }}
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-                    {t.skills.title.split(' ')[0]} <span className="gradient-text">{t.skills.title.split(' ').slice(1).join(' ')}</span>
+                    Technical <span className="gradient-text">Skills</span>
                 </h2>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

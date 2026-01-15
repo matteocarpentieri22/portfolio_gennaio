@@ -3,18 +3,14 @@ import { motion } from 'framer-motion';
 import { Linkedin, ChevronDown } from 'lucide-react';
 import { personalInfo } from '../data/portfolio-data';
 import profileImage from '../assets/profile.jpg';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTranslations } from '../data/translations';
 
 export default function Hero() {
-    const { language } = useLanguage();
-    const t = useTranslations(language);
     const [roleIndex, setRoleIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
-        const currentRole = t.hero.roles[roleIndex];
+        const currentRole = personalInfo.roles[roleIndex];
         const typingSpeed = isDeleting ? 50 : 100;
 
         const timeout = setTimeout(() => {
@@ -32,13 +28,13 @@ export default function Hero() {
                     setDisplayedText(displayedText.slice(0, -1));
                 } else {
                     setIsDeleting(false);
-                    setRoleIndex((prev) => (prev + 1) % t.hero.roles.length);
+                    setRoleIndex((prev) => (prev + 1) % personalInfo.roles.length);
                 }
             }
         }, typingSpeed);
 
         return () => clearTimeout(timeout);
-    }, [displayedText, isDeleting, roleIndex, t.hero.roles]);
+    }, [displayedText, isDeleting, roleIndex]);
 
     return (
         <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
@@ -110,7 +106,10 @@ export default function Hero() {
                     className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed px-4"
                     style={{ willChange: 'transform, opacity' }}
                 >
-                    {t.hero.description}
+                    I am a young <span className="gradient-text font-bold">Computer Engineer</span> specializing in{' '}
+                    <span className="gradient-text font-bold">Artificial Intelligence and Robotics</span>.
+                    I enjoy solving complex themes and tackling complex challenges, always looking for innovative solutions.
+                    My passions are football and fashion.
                 </motion.p>
 
                 {/* LinkedIn Link */}
@@ -132,7 +131,7 @@ export default function Hero() {
                         className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-electric-blue to-neon-violet hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] transition-all duration-300 transform hover:scale-105"
                     >
                         <Linkedin className="w-5 h-5" />
-                        <span className="font-semibold text-base">{t.hero.linkedin}</span>
+                        <span className="font-semibold text-base">Connect on LinkedIn</span>
                     </a>
                 </motion.div>
 
