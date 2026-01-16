@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, ChevronDown } from 'lucide-react';
+import { Linkedin, ChevronDown, Download } from 'lucide-react';
 import { personalInfo } from '../data/portfolio-data';
 import profileImage from '../assets/profile.jpg';
 
@@ -112,7 +112,7 @@ export default function Hero() {
                     My passions are football and fashion.
                 </motion.p>
 
-                {/* LinkedIn Link */}
+                {/* Action Buttons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function Hero() {
                         delay: 0.8,
                         ease: [0.25, 0.1, 0.25, 1]
                     }}
-                    className="flex justify-center gap-6 mb-8"
+                    className="flex flex-wrap justify-center gap-4 mb-8"
                     style={{ willChange: 'transform, opacity' }}
                 >
                     <a
@@ -132,6 +132,14 @@ export default function Hero() {
                     >
                         <Linkedin className="w-5 h-5" />
                         <span className="font-semibold text-base">Connect on LinkedIn</span>
+                    </a>
+                    <a
+                        href="/cv.pdf"
+                        download="Matteo_Carpentieri_CV.pdf"
+                        className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-neon-violet to-electric-blue hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 transform hover:scale-105"
+                    >
+                        <Download className="w-5 h-5" />
+                        <span className="font-semibold text-base">Download CV</span>
                     </a>
                 </motion.div>
 

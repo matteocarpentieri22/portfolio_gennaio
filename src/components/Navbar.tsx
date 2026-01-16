@@ -9,6 +9,7 @@ const navItems = [
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Resume', href: '/cv.pdf', isDownload: true },
 ];
 
 export default function Navbar() {
@@ -78,23 +79,34 @@ export default function Navbar() {
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-1">
                             {navItems.map((item) => (
-                                <button
-                                    key={item.name}
-                                    onClick={() => scrollToSection(item.href)}
-                                    className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
-                                        ? 'text-electric-blue'
-                                        : 'text-slate-300 hover:text-white'
-                                        }`}
-                                >
-                                    {activeSection === item.href.substring(1) && (
-                                        <motion.div
-                                            layoutId="activeSection"
-                                            className="absolute inset-0 bg-electric-blue/10 rounded-lg border border-electric-blue/30"
-                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                        />
-                                    )}
-                                    <span className="relative z-10">{item.name}</span>
-                                </button>
+                                item.isDownload ? (
+                                    <a
+                                        key={item.name}
+                                        href={item.href}
+                                        download="Matteo_Carpentieri_CV.pdf"
+                                        className="relative px-4 py-2 rounded-lg font-medium transition-all duration-300 text-slate-300 hover:text-white"
+                                    >
+                                        <span className="relative z-10">{item.name}</span>
+                                    </a>
+                                ) : (
+                                    <button
+                                        key={item.name}
+                                        onClick={() => scrollToSection(item.href)}
+                                        className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
+                                            ? 'text-electric-blue'
+                                            : 'text-slate-300 hover:text-white'
+                                            }`}
+                                    >
+                                        {activeSection === item.href.substring(1) && (
+                                            <motion.div
+                                                layoutId="activeSection"
+                                                className="absolute inset-0 bg-electric-blue/10 rounded-lg border border-electric-blue/30"
+                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                        <span className="relative z-10">{item.name}</span>
+                                    </button>
+                                )
                             ))}
                         </div>
 
@@ -125,19 +137,33 @@ export default function Navbar() {
                     >
                         <div className="flex flex-col pt-20 px-6 space-y-2">
                             {navItems.map((item, index) => (
-                                <motion.button
-                                    key={item.name}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.05 }}
-                                    onClick={() => scrollToSection(item.href)}
-                                    className={`text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
-                                        ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30'
-                                        : 'text-slate-300 hover:bg-electric-blue/10 hover:text-white'
-                                        }`}
-                                >
-                                    {item.name}
-                                </motion.button>
+                                item.isDownload ? (
+                                    <motion.a
+                                        key={item.name}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.05 }}
+                                        href={item.href}
+                                        download="Matteo_Carpentieri_CV.pdf"
+                                        className="text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 text-slate-300 hover:bg-electric-blue/10 hover:text-white"
+                                    >
+                                        {item.name}
+                                    </motion.a>
+                                ) : (
+                                    <motion.button
+                                        key={item.name}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.05 }}
+                                        onClick={() => scrollToSection(item.href)}
+                                        className={`text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
+                                            ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30'
+                                            : 'text-slate-300 hover:bg-electric-blue/10 hover:text-white'
+                                            }`}
+                                    >
+                                        {item.name}
+                                    </motion.button>
+                                )
                             ))}
                         </div>
                     </motion.div>
