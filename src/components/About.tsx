@@ -43,7 +43,7 @@ export default function About() {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             className="glass-card p-6 hover:neon-glow transition-all duration-300 group"
                         >
-                            <div className="text-electric-blue mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <div className="text-electric-blue mb-4">
                                 {item.icon}
                             </div>
                             <h3 className="text-xl font-bold mb-2">{item.title}</h3>

@@ -39,7 +39,7 @@ export default function Experience() {
 
                             <div className="ml-16 md:ml-0 p-6 hover:neon-glow transition-all duration-300 group relative z-10 bg-cyber-gray border border-white/10 rounded-2xl">
                                 <div className="flex items-start gap-3 mb-3">
-                                    <div className="p-2 rounded-lg bg-gradient-to-r from-electric-blue to-neon-violet group-hover:scale-110 transition-transform duration-300">
+                                    <div className="p-2 rounded-lg bg-gradient-to-r from-electric-blue to-neon-violet">
                                         <Briefcase className="w-5 h-5" />
                                     </div>
                                     <div className="flex-1">

@@ -54,7 +54,7 @@ export default function Projects() {
                                 <img
                                     src={projectImages[index]}
                                     alt={project.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark via-transparent to-transparent opacity-60" />
 
@@ -68,7 +68,7 @@ export default function Projects() {
 
                             {/* Project Content */}
                             <div className="p-6">
-                                <h3 className="text-xl font-bold mb-3 group-hover:gradient-text transition-all duration-300">
+                                <h3 className="text-xl font-bold mb-3">
                                     {project.title}
                                 </h3>
 

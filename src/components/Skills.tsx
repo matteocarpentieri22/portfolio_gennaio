@@ -72,21 +72,12 @@ export default function Skills() {
 
                             <div className="flex flex-wrap gap-2">
                                 {category.skills.map((skill, skillIndex) => (
-                                    <motion.span
+                                    <span
                                         key={skillIndex}
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true, margin: '-50px' }}
-                                        transition={{
-                                            duration: 0.2,
-                                            delay: categoryIndex * 0.08 + skillIndex * 0.03,
-                                            ease: 'easeOut'
-                                        }}
                                         className="px-3 py-1 text-sm rounded-full bg-cyber-gray/80 border border-electric-blue/30 hover:border-electric-blue hover:shadow-[0_0_10px_rgba(0,212,255,0.3)] transition-all duration-300 cursor-default"
-                                        style={{ willChange: 'transform, opacity' }}
                                     >
                                         {skill}
-                                    </motion.span>
+                                    </span>
                                 ))}
                             </div>
                         </motion.div>
