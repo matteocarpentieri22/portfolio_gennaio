@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-cyber-dark text-slate-50 overflow-x-hidden custom-scrollbar">
+    <div className="relative min-h-screen text-slate-50 overflow-x-hidden custom-scrollbar">
       <AnimatedBackground />
       <Navbar />
 

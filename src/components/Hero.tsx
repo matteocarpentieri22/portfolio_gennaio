@@ -65,8 +65,8 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
                         delay: 0.2,
@@ -79,8 +79,8 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
                         delay: 0.4,
@@ -96,8 +96,8 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
                         delay: 0.6,
@@ -114,8 +114,8 @@ export default function Hero() {
 
                 {/* Action Buttons */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
                         delay: 0.8,
@@ -128,7 +128,7 @@ export default function Hero() {
                         href={personalInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-electric-blue to-neon-violet hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] transition-all duration-300 transform hover:scale-105"
+                        className="group relative inline-flex items-center justify-center gap-3 px-6 py-3 min-w-[240px] rounded-xl bg-gradient-to-r from-electric-blue to-neon-violet hover:shadow-[0_0_40px_rgba(0,212,255,0.6)] transition-all duration-300 transform hover:scale-105"
                     >
                         <Linkedin className="w-5 h-5" />
                         <span className="font-semibold text-base">Connect on LinkedIn</span>
@@ -136,7 +136,7 @@ export default function Hero() {
                     <a
                         href="/cv.pdf"
                         download="Matteo_Carpentieri_CV.pdf"
-                        className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-neon-violet to-electric-blue hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 transform hover:scale-105"
+                        className="group relative inline-flex items-center justify-center gap-3 px-6 py-3 min-w-[240px] rounded-xl bg-gradient-to-r from-neon-violet to-electric-blue hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 transform hover:scale-105"
                     >
                         <Download className="w-5 h-5" />
                         <span className="font-semibold text-base">Download CV</span>
