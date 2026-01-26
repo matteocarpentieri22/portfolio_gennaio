@@ -22,10 +22,10 @@ export default function Projects() {
     return (
         <section id="projects" className="section-container">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.0, ease: "easeInOut" }}
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
                     Academic <span className="gradient-text">Projects</span>
@@ -42,7 +42,7 @@ export default function Projects() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
-                                duration: 0.9,
+                                duration: 0.6,
                                 delay: index * 0.15, // Leggermente più delay tra le card
                                 ease: "easeInOut"
                             }}
