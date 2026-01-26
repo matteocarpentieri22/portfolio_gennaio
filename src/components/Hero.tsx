@@ -40,11 +40,11 @@ export default function Hero() {
         <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
             <div className="section-container text-center z-10 max-w-4xl">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        duration: 1.0,
-                        ease: 'easeInOut'
+                        duration: 0.8,
+                        ease: 'easeOut'
                     }}
                     className="mb-4"
                     style={{ willChange: 'transform, opacity' }}
@@ -62,12 +62,12 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        duration: 0.6,
+                        duration: 0.8,
                         delay: 0.2,
-                        ease: [0.25, 0.1, 0.25, 1]
+                        ease: 'easeOut'
                     }}
                     className="text-3xl md:text-5xl font-bold mb-3 tracking-tight"
                     style={{ willChange: 'transform, opacity' }}
@@ -76,12 +76,12 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        duration: 0.6,
-                        delay: 0.4,
-                        ease: [0.25, 0.1, 0.25, 1]
+                        duration: 0.8,
+                        delay: 0.3,
+                        ease: 'easeOut'
                     }}
                     className="mb-4"
                     style={{ willChange: 'transform, opacity' }}
@@ -93,12 +93,12 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.p
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        duration: 0.6,
-                        delay: 0.6,
-                        ease: [0.25, 0.1, 0.25, 1]
+                        duration: 0.8,
+                        delay: 0.4,
+                        ease: 'easeOut'
                     }}
                     className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed px-4"
                     style={{ willChange: 'transform, opacity' }}
@@ -111,12 +111,11 @@ export default function Hero() {
 
                 {/* Action Buttons */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
-                        duration: 0.6,
-                        delay: 0.8,
-                        ease: [0.25, 0.1, 0.25, 1]
+                        duration: 0.8,
+                        ease: 'easeOut'
                     }}
                     className="flex flex-wrap justify-center gap-4 mb-8"
                     style={{ willChange: 'transform, opacity' }}

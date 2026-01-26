@@ -52,13 +52,13 @@ export default function Skills() {
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={categoryIndex}
-                            initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
-                                duration: 0.4,
-                                delay: categoryIndex * 0.08,
-                                ease: [0.25, 0.1, 0.25, 1]
+                                duration: 0.5,
+                                delay: categoryIndex * 0.1,
+                                ease: "easeOut"
                             }}
                             className="glass-card p-6 hover:neon-glow transition-all duration-300"
                             style={{ willChange: 'transform, opacity' }}

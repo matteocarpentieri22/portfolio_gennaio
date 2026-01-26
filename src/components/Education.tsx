@@ -19,13 +19,13 @@ export default function Education() {
                     {education.map((edu, index) => (
                         <motion.div
                             key={edu.id}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
-                                duration: 0.5,
-                                delay: index * 0.15,
-                                ease: [0.25, 0.1, 0.25, 1]
+                                duration: 0.8,
+                                delay: index * 0.2,
+                                ease: "easeOut"
                             }}
                             className="glass-card p-6 hover:neon-glow transition-all duration-300 group"
                             style={{ willChange: 'transform, opacity' }}

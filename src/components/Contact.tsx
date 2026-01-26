@@ -25,8 +25,8 @@ export default function Contact() {
                     {/* Email */}
                     <motion.a
                         href={`mailto:${personalInfo.email}`}
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="group glass-card p-6 hover:neon-glow transition-all duration-300 w-full sm:w-auto min-w-[280px]"
@@ -49,8 +49,8 @@ export default function Contact() {
                         href={personalInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="group glass-card p-6 hover:neon-glow-violet transition-all duration-300 w-full sm:w-auto min-w-[280px]"
