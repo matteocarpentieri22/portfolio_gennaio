@@ -52,8 +52,6 @@ export default function Skills() {
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={categoryIndex}
-                            initial={{ y: 20, opacity: 0 }} /* Keeping opacity 0 start slightly or it looks broken on refresh often, but user said remove dissolvenza. If I remove opacity 0, it renders at y:20 visible then moves. pure slide. */
-                            /* Wait, user said "togli la dissolvenza". If I remove opacity, it's just movement. */
                             initial={{ y: 50 }}
                             whileInView={{ y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
