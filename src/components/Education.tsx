@@ -6,10 +6,10 @@ export default function Education() {
     return (
         <section id="education" className="section-container">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.0, ease: "easeInOut" }}
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
                     <span className="gradient-text">Education</span>

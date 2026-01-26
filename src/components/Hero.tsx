@@ -40,14 +40,11 @@ export default function Hero() {
         <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
             <div className="section-container text-center z-10 max-w-4xl">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
-                        duration: 0.8,
-                        ease: 'easeOut',
-                        type: 'spring',
-                        stiffness: 100,
-                        damping: 15
+                        duration: 1.2,
+                        ease: 'easeInOut'
                     }}
                     className="mb-4"
                     style={{ willChange: 'transform, opacity' }}

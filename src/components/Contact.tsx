@@ -6,10 +6,10 @@ export default function Contact() {
     return (
         <section id="contact" className="section-container">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.0, ease: "easeInOut" }}
                 className="max-w-3xl mx-auto text-center"
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">

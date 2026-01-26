@@ -39,10 +39,10 @@ export default function Skills() {
     return (
         <section id="skills" className="section-container">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.0, ease: "easeInOut" }}
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
                     Technical <span className="gradient-text">Skills</span>

@@ -38,13 +38,13 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-                            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
-                                duration: 0.5,
-                                delay: index * 0.1,
-                                ease: "easeOut"
+                                duration: 0.9,
+                                delay: index * 0.15, // Leggermente più delay tra le card
+                                ease: "easeInOut"
                             }}
                             className="glass-card overflow-hidden group hover:neon-glow transition-all duration-300"
                             style={{ willChange: 'transform, opacity' }}

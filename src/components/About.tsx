@@ -23,10 +23,10 @@ export default function About() {
     return (
         <section id="about" className="section-container">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1.0, ease: "easeInOut" }}
                 className="max-w-5xl mx-auto"
             >
                 <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
