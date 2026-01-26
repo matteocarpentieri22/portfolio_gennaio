@@ -40,8 +40,8 @@ export default function Hero() {
         <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
             <div className="section-container text-center z-10 max-w-4xl">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{
                         duration: 0.8,
                         ease: 'easeOut'
@@ -62,8 +62,8 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{
                         duration: 0.8,
                         delay: 0.2,
@@ -76,8 +76,8 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{
                         duration: 0.8,
                         delay: 0.3,
@@ -93,8 +93,8 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{
                         duration: 0.8,
                         delay: 0.4,
@@ -111,8 +111,8 @@ export default function Hero() {
 
                 {/* Action Buttons */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{
                         duration: 0.8,
                         ease: 'easeOut'
