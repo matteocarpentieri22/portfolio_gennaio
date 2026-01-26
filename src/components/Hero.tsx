@@ -40,10 +40,10 @@ export default function Hero() {
         <section id="home" className="min-h-[100svh] flex items-center justify-center relative overflow-hidden py-16 md:py-20">
             <div className="section-container text-center z-10 max-w-4xl">
                 <motion.div
-                    initial={{ y: 20 }}
+                    initial={{ y: 50 }}
                     animate={{ y: 0 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 1.2,
                         ease: 'easeOut'
                     }}
                     className="mb-4"
@@ -62,10 +62,10 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1
-                    initial={{ y: 20 }}
+                    initial={{ y: 50 }}
                     animate={{ y: 0 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 1.2,
                         delay: 0.2,
                         ease: 'easeOut'
                     }}
@@ -76,10 +76,10 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.div
-                    initial={{ y: 20 }}
+                    initial={{ y: 50 }}
                     animate={{ y: 0 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 1.2,
                         delay: 0.3,
                         ease: 'easeOut'
                     }}
@@ -93,10 +93,10 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.p
-                    initial={{ y: 20 }}
+                    initial={{ y: 50 }}
                     animate={{ y: 0 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 1.2,
                         delay: 0.4,
                         ease: 'easeOut'
                     }}
@@ -111,10 +111,10 @@ export default function Hero() {
 
                 {/* Action Buttons */}
                 <motion.div
-                    initial={{ y: 20 }}
+                    initial={{ y: 50 }}
                     animate={{ y: 0 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 1.2,
                         ease: 'easeOut'
                     }}
                     className="flex flex-wrap justify-center gap-4 mb-8"

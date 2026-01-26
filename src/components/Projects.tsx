@@ -38,11 +38,11 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            initial={{ y: 20 }}
+                            initial={{ y: 50 }}
                             whileInView={{ y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
-                                duration: 0.5,
+                                duration: 1.0,
                                 delay: index * 0.1,
                                 ease: "easeOut"
                             }}

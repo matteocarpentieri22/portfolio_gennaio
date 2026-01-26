@@ -37,10 +37,10 @@ export default function About() {
                     {highlights.map((item, index) => (
                         <motion.div
                             key={index}
-                            initial={{ y: 20 }}
+                            initial={{ y: 50 }}
                             whileInView={{ y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                            transition={{ duration: 1.0, delay: index * 0.2 }}
                             className="glass-card p-6 hover:neon-glow transition-all duration-300 group"
                         >
                             <div className="text-electric-blue mb-4">

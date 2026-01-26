@@ -25,10 +25,10 @@ export default function Contact() {
                     {/* Email */}
                     <motion.a
                         href={`mailto:${personalInfo.email}`}
-                        initial={{ y: 20 }}
+                        initial={{ y: 50 }}
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 1.0, delay: 0.2 }}
                         className="group glass-card p-6 hover:neon-glow transition-all duration-300 w-full sm:w-auto min-w-[280px]"
                     >
                         <div className="flex items-center gap-4">
@@ -49,10 +49,10 @@ export default function Contact() {
                         href={personalInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ y: 20 }}
+                        initial={{ y: 50 }}
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+                        transition={{ duration: 1.0, delay: 0.4 }}
                         className="group glass-card p-6 hover:neon-glow-violet transition-all duration-300 w-full sm:w-auto min-w-[280px]"
                     >
                         <div className="flex items-center gap-4">
