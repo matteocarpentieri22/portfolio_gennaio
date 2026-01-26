@@ -44,7 +44,7 @@ export default function AnimatedBackground() {
 
         // --- ORBS (Background Glows) ---
         const orbs: Orb[] = [];
-        const orbCount = isMobile ? 3 : 6; // Reduced for mobile
+        const orbCount = isMobile ? 2 : 6; // Further reduced for mobile performance
         const colors = [
             'rgba(0, 212, 255, 0.4)', // Electric Blue
             'rgba(168, 85, 247, 0.4)', // Neon Violet
@@ -58,7 +58,7 @@ export default function AnimatedBackground() {
                 vx: (Math.random() - 0.5) * 0.15,
                 vy: (Math.random() - 0.5) * 0.15,
                 radius: isMobile
-                    ? Math.random() * 100 + 80   // Smaller for mobile
+                    ? Math.random() * 80 + 60   // Even smaller for mobile
                     : Math.random() * 200 + 150,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 pulse: Math.random() * Math.PI * 2,
@@ -68,7 +68,7 @@ export default function AnimatedBackground() {
 
         // --- PARTICLES (Cyber Grid) ---
         const particles: Particle[] = [];
-        const particleCount = isMobile ? 35 : 80; // Significantly reduced for mobile
+        const particleCount = isMobile ? 20 : 80; // Minimal density for mobile
 
         for (let i = 0; i < particleCount; i++) {
             particles.push({
@@ -80,6 +80,8 @@ export default function AnimatedBackground() {
                 color: Math.random() > 0.5 ? 'rgba(0, 212, 255, 0.8)' : 'rgba(168, 85, 247, 0.8)'
             });
         }
+
+        const connectionDistance = isMobile ? 80 : 150; // Shorter connections on mobile
 
         let animationFrameId: number;
         let time = 0;
@@ -135,11 +137,11 @@ export default function AnimatedBackground() {
                     const dy = particle.y - other.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 150) {
+                    if (dist < connectionDistance) {
                         ctx.beginPath();
                         ctx.moveTo(particle.x, particle.y);
                         ctx.lineTo(other.x, other.y);
-                        const opacity = (1 - dist / 150) * 0.3;
+                        const opacity = (1 - dist / connectionDistance) * 0.3;
                         ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();

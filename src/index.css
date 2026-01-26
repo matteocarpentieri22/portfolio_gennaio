@@ -26,20 +26,23 @@
   }
 
   /* Neon glow effect */
-  .neon-glow {
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3),
-      0 0 20px rgba(0, 212, 255, 0.2),
-      0 0 30px rgba(0, 212, 255, 0.1);
-    transform: translateZ(0);
-    will-change: box-shadow, transform;
-  }
+  /* Neon glow effect - Only for desktop/tablet to improve mobile performance */
+  @media (min-width: 768px) {
+    .neon-glow {
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.3),
+        0 0 20px rgba(0, 212, 255, 0.2),
+        0 0 30px rgba(0, 212, 255, 0.1);
+      transform: translateZ(0);
+      will-change: box-shadow, transform;
+    }
 
-  .neon-glow-violet {
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3),
-      0 0 20px rgba(168, 85, 247, 0.2),
-      0 0 30px rgba(168, 85, 247, 0.1);
-    transform: translateZ(0);
-    will-change: box-shadow, transform;
+    .neon-glow-violet {
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.3),
+        0 0 20px rgba(168, 85, 247, 0.2),
+        0 0 30px rgba(168, 85, 247, 0.1);
+      transform: translateZ(0);
+      will-change: box-shadow, transform;
+    }
   }
 
   /* Gradient text */
