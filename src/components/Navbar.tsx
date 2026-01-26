@@ -132,7 +132,7 @@ export default function Navbar() {
                         className="fixed inset-y-0 right-0 z-40 w-64 bg-cyber-dark/95 backdrop-blur-xl border-l border-electric-blue/20 shadow-2xl md:hidden"
                     >
                         <div className="flex flex-col pt-20 px-6 space-y-2">
-                            {navItems.map((item, index) => (
+                            {navItems.map((item) => (
                                 item.isDownload ? (
                                     <a
                                         key={item.name}
