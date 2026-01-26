@@ -39,8 +39,8 @@ export default function Skills() {
     return (
         <section id="skills" className="section-container">
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.0, ease: "easeInOut" }}
             >
@@ -52,8 +52,8 @@ export default function Skills() {
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={categoryIndex}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{
                                 duration: 0.4,

@@ -129,32 +129,22 @@ export default function Navbar() {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        transition={{ type: 'tween', duration: 0.3 }}
                         className="fixed inset-y-0 right-0 z-40 w-64 bg-cyber-dark/95 backdrop-blur-xl border-l border-electric-blue/20 shadow-2xl md:hidden"
                     >
                         <div className="flex flex-col pt-20 px-6 space-y-2">
                             {navItems.map((item, index) => (
                                 item.isDownload ? (
-                                    <motion.a
+                                    <a
                                         key={item.name}
-                                        initial={{ opacity: 0, x: 20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.05 }}
                                         href={item.href}
                                         download="Matteo_Carpentieri_CV.pdf"
                                         className="text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 text-slate-300 hover:bg-electric-blue/10 hover:text-white"
                                     >
                                         {item.name}
-                                    </motion.a>
+                                    </a>
                                 ) : (
-                                    <motion.button
+                                    <button
                                         key={item.name}
-                                        initial={{ opacity: 0, x: 20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.05 }}
                                         onClick={() => scrollToSection(item.href)}
                                         className={`text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === item.href.substring(1)
                                             ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30'
@@ -162,7 +152,7 @@ export default function Navbar() {
                                             }`}
                                     >
                                         {item.name}
-                                    </motion.button>
+                                    </button>
                                 )
                             ))}
                         </div>
@@ -173,10 +163,7 @@ export default function Navbar() {
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                    <div
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 md:hidden"
                     />
